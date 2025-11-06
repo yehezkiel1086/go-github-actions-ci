@@ -32,3 +32,8 @@ func (db *DB) Migrate(dbs ...any) error {
 func (db *DB) GetDB() *gorm.DB {
 	return db.db
 }
+
+// NewTestDB is a constructor for testing purposes.
+func NewTestDB(gormDB *gorm.DB) *DB {
+	return &DB{db: gormDB}
+}
